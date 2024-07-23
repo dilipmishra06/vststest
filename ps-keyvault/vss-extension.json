@@ -1,0 +1,37 @@
+{
+  "manifestVersion": 1,
+  "id": "CreateKeyVault",
+  "name": "CreateKeyvault",
+  "publisher": "",
+  "version": "5.0.6",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Description of your extension",
+  "categories": ["Azure Pipelines"],
+  "files": [
+    {
+      "path": "src"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "CreateKeyVault",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "src/createkeyvault"
+      }
+    },
+    {
+      "id": "CreateStorageAccountTask",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "src/createstorageaccount"
+      }
+    }
+  ]
+}

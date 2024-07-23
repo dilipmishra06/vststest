@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "70ac28f9-092e-49b2-a358-22d5514d7f3e",
+  "name": "CreateStorageAccountTask",
+  "friendlyName": "Creates StorageAccount",
+  "description": "Creates a StorageAccount in azure",
+  "helpMarkDown": "",
+  "category": "Build",
+  "visibility": ["Build", "Release"],
+  "author": "Your Name",
+  "version": {
+    "Major": 5,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Deploying $(storageAccountName)",
+  "inputs": [
+    {
+      "name": "connectedServiceName",
+      "type": "connectedService:AzureRM",
+      "label": "Azure Subscription",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Azure subscription to use for deployment."
+    },
+    {
+      "name": "storageAccountName",
+      "type": "string",
+      "label": "StorageAccount Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of the Azure storageAccount to deploy."
+    },
+    {
+      "name": "resourceGroupName",
+      "type": "string",
+      "label": "StorageAccount Resource Group Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "ResourceGroup of the Azure storageAccount to deploy."
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "label": "StorageAccount Location",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Location of storageAccount to deploy."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "main.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

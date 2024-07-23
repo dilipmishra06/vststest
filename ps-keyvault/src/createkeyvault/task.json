@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "58b2f5eb-e6d2-48af-a7a8-55c20683f299",
+  "name": "CreateKeyVaultTask",
+  "friendlyName": "Create keyvault",
+  "description": "Creates a keyvault in azure",
+  "helpMarkDown": "",
+  "category": "Build",
+  "visibility": ["Build", "Release"],
+  "author": "Your Name",
+  "version": {
+    "Major": 5,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Deploying $(keyVaultName)",
+  "inputs": [
+    {
+      "name": "connectedServiceName",
+      "type": "connectedService:AzureRM",
+      "label": "Azure Subscription",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Azure subscription to use for deployment."
+    },
+    {
+      "name": "keyVaultName",
+      "type": "string",
+      "label": "Key Vault Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of the Azure Key Vault to deploy."
+    },
+    {
+      "name": "resourceGroupName",
+      "type": "string",
+      "label": "Key Vault Resource Group Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of the Azure Key Vault to deploy."
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "label": "Key Vault Location",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of the Azure Key Vault to deploy."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "main.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
