@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
-  "id": "CreateKeyVault",
-  "name": "CreateKeyvault",
+  "id": "CreateAzResources",
+  "name": "CreateAzResources",
   "publisher": "",
   "version": "5.0.6",
   "targets": [
